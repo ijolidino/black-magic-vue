@@ -1,9 +1,10 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import TodoList from './components/TodoList.vue'
 </script>
 
 <template>
   <div>
+    <TodoList></TodoList>
     <router-link to="/">首页</router-link> |
     <router-link to="/about">关于</router-link>
   </div>
