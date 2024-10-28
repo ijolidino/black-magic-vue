@@ -1,7 +1,7 @@
 <template>
   <div>
     <input type="text" v-model="title" @keydown.enter="addTodo" />
-    <button v-if="active < all" @click="clear">清理</button>
+    <el-button v-if="active < all" @click="clear">清理</el-button>
     <ul v-if="todos.length">
       <li v-for="todo in todos">
         <input type="checkbox" v-model="todo.done" />
@@ -17,6 +17,14 @@
 </template>
 <script setup lang="ts">
 import { ref,computed } from "vue";
+import {
+  Check,
+  Delete,
+  Edit,
+  Message,
+  Search,
+  Star,
+} from '@element-plus/icons-vue'
 let title = ref("");
 let todos = ref([{title:'学习Vue',done:false}])
 function addTodo() {
