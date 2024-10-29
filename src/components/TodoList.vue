@@ -16,39 +16,41 @@
   </div>
 </template>
 <script setup lang="ts">
+let { title, todos, addTodo, clear, active, all, allDone } = useTodos();
+
+</script>
+
+<script lang="ts">
 import { ref,computed } from "vue";
-import {
-  Check,
-  Delete,
-  Edit,
-  Message,
-  Search,
-  Star,
-} from '@element-plus/icons-vue'
-let title = ref("");
-let todos = ref([{title:'学习Vue',done:false}])
-function addTodo() {
-  todos.value.push({
-    title: title.value,
-    done: false,
-  });
+import {useMouse} from '../utils/mouse'
+let {x,y} = useMouse()
+function useTodos() {
+  let title = ref("");
+  let todos = ref([{ title: "学习Vue", done: false }]);
+  function addTodo() {
+    todos.value.push({
+      title: title.value,
+      done: false,
+    });
+    title.value = "";
+  }
   function clear() {
     todos.value = todos.value.filter((v) => !v.done);
-  };
-  title.value = "";
-};
-let active = computed(() => {
-  return todos.value.filter((v) => !v.done).length;
-});
-let all = computed(() => todos.value.length);
-let allDone = computed({
-  get: function () {
-    return active.value === 0;
-  },
-  set: function (value) {
-    todos.value.forEach((todo) => {
-      todo.done = value;
-    });
-  },
-});
+  }
+  let active = computed(() => {
+    return todos.value.filter((v) => !v.done).length;
+  });
+  let all = computed(() => todos.value.length);
+  let allDone = computed({
+    get: function () {
+      return active.value === 0;
+    },
+    set: function (value) {
+      todos.value.forEach((todo) => {
+        todo.done = value;
+      });
+    },
+  });
+  return { title, todos, addTodo, clear, active, all, allDone };
+}
 </script>
