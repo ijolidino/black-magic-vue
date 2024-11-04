@@ -1,10 +1,16 @@
 <script setup lang="ts">
 import TodoList from './components/TodoList.vue'
+import {ref} from 'vue'
+import Rate from './components/Rate.vue';
+let score = ref(3)
 </script>
 
 <template>
   <div>
     <TodoList></TodoList>
+    <Rate :value="3" >分数</Rate>
+    <Rate :value="4" theme="red">分数1</Rate>
+    <Rate :value="1" theme="green"></Rate>
     <router-link to="/">首页</router-link> |
     <router-link to="/about">关于</router-link>
   </div>
