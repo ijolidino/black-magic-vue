@@ -8,7 +8,7 @@ let score = ref(3)
 <template>
   <div>
     <TodoList></TodoList>
-    <Rate :value="3" >分数</Rate>
+    <Rate :value="3" theme="black">分数</Rate>
     <Rate :value="4" theme="red">分数1</Rate>
     <Rate :value="1" theme="green"></Rate>
     <router-link to="/">首页</router-link> |

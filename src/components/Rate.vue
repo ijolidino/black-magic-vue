@@ -11,7 +11,7 @@ let props = defineProps({
   theme:{type:String,default:'orange'}
 })
 console.log(props)
-let rate = computed(()=>"⭐⭐⭐⭐⭐□□□□□□".slice(5-props.value,10-props.value))
+let rate = computed(()=>"★★★★★☆☆☆☆☆".slice(5-props.value,10-props.value))
 const themeObj = {
   'black': '#00',
   'white': '#fff',
