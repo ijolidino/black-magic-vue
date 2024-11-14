@@ -4,6 +4,8 @@ import {ref} from 'vue'
 import Rate from './components/Rate.vue';
 import AddDiv  from "./components/AddDiv.vue";
 import ShowAndHiden  from "./components/ShowAndHiden.vue";
+import Count from "./components/Count.vue";
+
 let score = ref(3)
 
 function update(num){
@@ -19,7 +21,9 @@ function update(num){
 <!--    <Rate :value="4" theme="red">分数1</Rate>-->
     <Rate :value="score" @update-rate="update"></Rate>
 <!--    <Rate :value="1" theme="green"></Rate>-->
+    <Count>累加器</Count>
     <AddDiv></AddDiv>
+    <
     <show-and-hiden></show-and-hiden>
     <router-link to="/">首页</router-link> |
     <router-link to="/about">关于</router-link>
