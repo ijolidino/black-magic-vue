@@ -1,5 +1,4 @@
 <template>
-  <h1>这是首页</h1>
   <el-container class="layout-container-demo" style="height: 500px">
     <el-aside width="200px">
       <el-scrollbar>
