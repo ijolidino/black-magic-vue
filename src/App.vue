@@ -53,7 +53,7 @@
 </template>
 
 
-<style>
+<style lang="scss" scoped  >
 .el-header,
 .el-footer {
   background-color: #b3c0d1;
